@@ -2,12 +2,13 @@ package routers
 
 import (
 	"go-test/controllers"
+	"go-test/middleware"
 
 	"github.com/gin-gonic/gin"
 )
 
 func productRouter(r *gin.RouterGroup) {
-	r.GET("", controllers.GetProducts)
-	r.GET("/:id", controllers.GetProductByID)
-	r.GET("/category", controllers.GetCategoryProducts)
+	r.GET("", middleware.AuthMiddlware(), controllers.GetProducts)
+	r.GET("/:id", middleware.AuthMiddlware(), controllers.GetProductByID)
+	r.GET("/category", middleware.AuthMiddlware(), controllers.GetCategoryProducts)
 }

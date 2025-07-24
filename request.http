@@ -1,11 +1,14 @@
 GET /products HTTP/1.1
 Host: localhost:8080
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTMzODMxMjYsImlhdCI6MTc1MzM3OTUyNiwidXNlcklkIjoyfQ.3x8USv0ycbXvEFm8yoLDgFIg8YLNZiXCQS7g676x9IU
 ###
 GET /products/1 HTTP/1.1
 Host: localhost:8080
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTMzODMxMjYsImlhdCI6MTc1MzM3OTUyNiwidXNlcklkIjoyfQ.3x8USv0ycbXvEFm8yoLDgFIg8YLNZiXCQS7g676x9IU
 ###
 GET /products/category HTTP/1.1
 Host: localhost:8080
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTMzODMxMjYsImlhdCI6MTc1MzM3OTUyNiwidXNlcklkIjoyfQ.3x8USv0ycbXvEFm8yoLDgFIg8YLNZiXCQS7g676x9IU
 ###
 POST /auth/login HTTP/1.1
 Host: localhost:8080
