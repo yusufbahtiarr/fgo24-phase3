@@ -27,11 +27,9 @@ erDiagram
     }
     transactions {
         int id PK
-        date transaction_date
-        string type_transaction
-        int quantity
-        int harga_satuan
         int product_id FK
+        string transaction_type
+        int quantity
         int user_id FK
         date created_at
         date updated_at
