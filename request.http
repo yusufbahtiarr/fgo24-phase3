@@ -7,3 +7,12 @@ Host: localhost:8080
 GET /products/category HTTP/1.1
 Host: localhost:8080
 ###
+POST /auth/login HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "username": "yusuf",
+  "password": "yusuf123"
+}
+###
