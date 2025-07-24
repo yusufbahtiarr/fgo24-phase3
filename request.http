@@ -1,14 +1,14 @@
 GET /products HTTP/1.1
 Host: localhost:8080
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTMzODMxMjYsImlhdCI6MTc1MzM3OTUyNiwidXNlcklkIjoyfQ.3x8USv0ycbXvEFm8yoLDgFIg8YLNZiXCQS7g676x9IU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTMzODgxNzgsImlhdCI6MTc1MzM4NDU3OCwidXNlcklkIjoyfQ.R2Zwslme3AiTVDDOVul60X2h20LfknU9MjRJqn1ldSg
 ###
 GET /products/1 HTTP/1.1
 Host: localhost:8080
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTMzODMxMjYsImlhdCI6MTc1MzM3OTUyNiwidXNlcklkIjoyfQ.3x8USv0ycbXvEFm8yoLDgFIg8YLNZiXCQS7g676x9IU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTMzODgxNzgsImlhdCI6MTc1MzM4NDU3OCwidXNlcklkIjoyfQ.R2Zwslme3AiTVDDOVul60X2h20LfknU9MjRJqn1ldSg
 ###
 GET /products/category HTTP/1.1
 Host: localhost:8080
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTMzODMxMjYsImlhdCI6MTc1MzM3OTUyNiwidXNlcklkIjoyfQ.3x8USv0ycbXvEFm8yoLDgFIg8YLNZiXCQS7g676x9IU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTMzODgxNzgsImlhdCI6MTc1MzM4NDU3OCwidXNlcklkIjoyfQ.R2Zwslme3AiTVDDOVul60X2h20LfknU9MjRJqn1ldSg
 ###
 POST /auth/login HTTP/1.1
 Host: localhost:8080
@@ -17,5 +17,21 @@ Content-Type: application/json
 {
   "username": "yusuf",
   "password": "yusuf123"
+}
+###
+GET /inventory/transactions HTTP/1.1
+Host: localhost:8080
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTMzODk5NjIsImlhdCI6MTc1MzM4NjM2MiwidXNlcklkIjoyfQ.XoLBvo2xS0gm-J-oNyXO3bLm7QqA1NJBqJKe5o3TdvA
+###
+
+POST /inventory/transactions HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTMzODk5NjIsImlhdCI6MTc1MzM4NjM2MiwidXNlcklkIjoyfQ.XoLBvo2xS0gm-J-oNyXO3bLm7QqA1NJBqJKe5o3TdvA
+
+{
+  "product_id": 1,
+  "transaction_type": "in",
+  "quantity": 5
 }
 ###
