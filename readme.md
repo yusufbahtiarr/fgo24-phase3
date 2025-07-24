@@ -112,13 +112,13 @@ erDiagram
 
 ## Endpoints Overview
 
-| Method | Endpoint                | Description                          | Auth |
-| ------ | ----------------------- | ------------------------------------ | ---- |
-| POST   | /users/login            | Login                                | No   |
-| GET    | /products               | Retrieves list of products           | Yes  |
-| GET    | /products/category      | Retrieves list of product categories | Yes  |
-| POST   | /inventory/transactions | Add new transaction                  | Yes  |
-| GET    | /inventory/transactions | Retrieves transactions history       | Yes  |
+| Method | Endpoint                | Description                                      | Auth |
+| ------ | ----------------------- | ------------------------------------------------ | ---- |
+| POST   | /users/login            | Login                                            | No   |
+| GET    | /products               | Retrieves list of products                       | Yes  |
+| GET    | /products/category      | Retrieves list of product categories             | Yes  |
+| POST   | /inventory/transactions | Create a new transaction (stock-in or stock-out) | Yes  |
+| GET    | /inventory/transactions | Retrieves transactions history                   | Yes  |
 
 ## Dependencies
 
