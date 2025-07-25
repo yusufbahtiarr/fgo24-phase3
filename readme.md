@@ -29,7 +29,7 @@ go run main.go
 | 2   | View Product Categories    | Users can view a list of product categories, including the category name and description. seeding.                                                                                                                                         |
 | 3   | View Product List          | Users can view all products including: product name, image (URL), category, purchase price, selling price, and available stock.                                                                                                            |
 | 4   | Product Stock Transactions | Admin can record stock transactions, both incoming (stock in) and outgoing (stock out). Incoming transactions increase product stock, while outgoing transactions decrease it — ensuring the quantity does not exceed the available stock. |
-| 5   | Transaction History        | Users can view all transaction history with details: product name, category, quantity in, quantity out, purchase price, selling price, total purchase value, total sales value, and current stock availability.                            |
+| 5   | Transaction History        | Users can view all transaction history with details:transaction id, product id, product name, category, quantity in, quantity out, purchase price, selling price, total purchase value, total sales value, and current stock availability. |
 
 ## Flowchart
 
@@ -42,11 +42,17 @@ flowchart TD
     PilihMenu@{ shape: diamond, label: "Pilih Menu?" }
     BarangKeluar@{ shape: rect, label: "Barang Keluar"}
     BarangMasuk@{ shape: rect, label: "Barang Masuk"}
+    Category@{ shape: rect, label: "Category"}
+    Product@{ shape: rect, label: "Product"}
+    HistoryTransaction@{ shape: rect, label: "History Transaction"}
     InputBarangKuantitas@{ shape: lean-r, label: "Produk, Quantity" }
     InputBarangKuantitas2@{ shape: lean-r, label: "Produk, Quantity" }
     CekStok@{ shape: diamond, label: "Stok Produk?" }
-    OutputBarangMasuk@{ shape: lean-r, label: '"Data Barang Masuk"' }
-    OutputBarangKeluar@{ shape: lean-r, label: '"Data Barang Keluar"' }
+    OutputBarangMasuk@{ shape: lean-r, label: '"Data Barang Masuk"'}
+    OutputBarangKeluar@{ shape: lean-r, label: '"Data Barang Keluar"'}
+    OutputCategory@{ shape: lean-r, label: '"Data Category"'}
+    OutputProduct@{ shape: lean-r, label: '"Data Product"'}
+    OutputHistoryTransaction@{ shape: lean-r, label: '"Data History Transaction"' }
 
     Selesai@{ shape: dbl-circ, label: "Selesai" }
 
@@ -56,10 +62,19 @@ flowchart TD
     TampilMenu --> PilihMenu
     PilihMenu --> BarangMasuk
     PilihMenu --> BarangKeluar
+    PilihMenu --> Category
+    PilihMenu --> Product
+    PilihMenu --> HistoryTransaction
     BarangMasuk --> InputBarangKuantitas --> OutputBarangMasuk
     BarangKeluar --> InputBarangKuantitas2 --> CekStok
+    Category --> OutputCategory
+    Product --> OutputProduct
+    HistoryTransaction --> OutputHistoryTransaction
     OutputBarangMasuk --> Selesai
     CekStok --Ya--> OutputBarangKeluar --> Selesai
+    OutputCategory --> Selesai
+    OutputProduct --> Selesai
+    OutputHistoryTransaction --> Selesai
     CekStok --Tidak--> PilihMenu
     PilihMenu --> Selesai
 
